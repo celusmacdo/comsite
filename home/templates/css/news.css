@@ -1,0 +1,363 @@
+.content {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.content .top {
+    width: 1200px;
+    height: 135px;
+    margin: 0 auto;
+    background-color: #d1c0a5;
+}
+
+.content .top div {
+    float: left;
+    width: 230px;
+    height: 100%;
+    font-size: 14px;
+    background: url(../img/035.png);
+    text-align: center;
+}
+
+.top div span {
+    display: block;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    color: white;
+    margin-top: 40px;
+}
+
+.top div p {
+    font-size: 11px;
+    font-family: "Arial";
+    color: white;
+}
+
+.content .top ul {
+    width: 970px;
+    height: 135px;
+    float: right;
+}
+
+.content .top ul li {
+    float: left;
+    display: block;
+    margin-right: 40px;
+    height: 135px;
+    width: 200px;
+    text-align: center;
+}
+
+.content .top ul .on a {
+    text-decoration: underline;
+    color: #333;
+    font-style: italic;
+}
+
+.content .top ul li a {
+    font-size: 24px;
+    font-family: "微软雅黑";
+    line-height: 135px;
+    color: #ffffff;
+}
+
+.content .top ul li a:hover {
+    background-color: #d1c0a5;
+    color: #333;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.news {
+    width: 1200px;
+    height: auto;
+    margin: 0px auto;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.news ul li:nth-child(odd) img{
+	width: 515px;
+	height: 300px;
+	float: left;
+}
+.news ul li:nth-child(even) img{
+	width: 515px;
+	height: 300px;
+	float: right;
+}
+
+.news li {
+    width: 1200px;
+    overflow: hidden;
+    margin-top: 70px;
+    position: relative;
+}
+
+.news li img {
+    width: 515px;
+    height: 285px;
+    display: block;
+    float: left;
+}
+
+.news ul li:nth-child(odd) .date {
+    width: 110px;
+    height: 50px;
+    background: #8692a9;
+    color: #fff;
+    font-family: "微软雅黑";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.news ul li:nth-child(even) .date {
+    width: 110px;
+    height: 50px;
+    background: #8692a9;
+    color: #fff;
+    font-family: "微软雅黑";
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.news li .date p {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.news li .date b {
+    font-size: 12px;
+}
+
+.news li .date span {
+    width: 80px;
+    height: 1px;
+    background: #fff;
+    display: block;
+    margin-left: 15px;
+}
+
+.news li .text {
+    width: 110px;
+    height: 50px;
+    background: #8692a9;
+    color: #fff;
+    font-family: "微软雅黑";
+    position: absolute;
+    left: 685px;
+    top: 0;
+}
+
+.news li .text p {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.news li .text b {
+    font-size: 12px;
+}
+
+.news li .text span {
+    width: 80px;
+    height: 1px;
+    background: #fff;
+    display: block;
+    margin-left: 15px;
+}
+
+.news ul li:nth-child(odd) .main {
+    width: 515px;
+    height: auto;
+    float: right;
+    font-family: "微软雅黑";
+}
+
+.news ul li:nth-child(even) .main {
+    width: 515px;
+    height: auto;
+    float: left;
+    font-family: "微软雅黑";
+}
+
+.news li .main p:last-child {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+
+.news li .main p {
+    font-size: 14px;
+    text-indent: 2em;
+    color: #333;
+    line-height: 25px;
+}
+
+.news li .main>a {
+    display: block;
+    width: 50px;
+    height: 20px;
+    background-color: #d1c0a5;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+    float: right;
+    margin-top: 37px;
+    line-height: 20px;
+}
+
+.news li .main-us {
+    width: 515px;
+    height: auto;
+    float: left;
+    font-family: "微软雅黑";
+}
+
+.news li .main-us h3,
+.news li .main h3 {
+    text-align: center;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.news li .main-us h3 a,
+.news li .main h3 a {
+    font-size: 18px;
+}
+
+.news li .main-us p {
+    font-size: 14px;
+    text-indent: 2em;
+    color: #333;
+    line-height: 25px;
+}
+
+.news li .main-us>a {
+    display: block;
+    width: 50px;
+    height: 20px;
+    background-color: #d1c0a5;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+    float: right;
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.news li:nth-child(even) .hover {
+    background: rgba(4, 3, 3, 0.5);
+    width: 515px;
+    height: 300px;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.news li:nth-child(even) .hover p {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    margin: 115px 230px;
+}
+
+.news li:nth-child(even) .hover p span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 13px auto;
+}
+
+.news li:nth-child(odd) .hover {
+    background: rgba(4, 3, 3, 0.5);
+    width: 515px;
+    height: 300px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.news li:nth-child(odd) .hover p {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    margin: 115px 230px;
+}
+
+.news li:nth-child(odd) .hover p span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 13px auto;
+}
+
+.news li a:hover .hover {
+    display: block;
+}
+
+.content .page {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: 100px;
+}
+
+.content .page li{
+	display: inline-block;
+	width: auto;
+	margin-top: 0;
+}
+
+.content .page a {
+    display: inline-block;
+    width: auto;
+    height: 35px;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    border: 2px solid #f8451b;
+    text-align: center;
+    line-height: 31px;
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+.content .page .on {
+    text-decoration: underline;
+}
+
+.content .page li:first-child a{
+    background: #f8451b;
+    color: #fff;
+    margin: 0;
+}
+
+.content .page li:last-child a{
+    background: #f8451b;
+    color: #fff;
+    margin: 0;
+}
+
+.content .page a:hover {
+    text-decoration: underline;
+}

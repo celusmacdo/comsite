@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>页面不存在</title>
+		<script src="public/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+        <div>页面不存在,<font id="times">5</font>秒后跳转</div>
+		<a href="<?php echo BASE_URL?>index.php?c=home&a=index&admin=0">点击跳转到首页</a>
+		<script>
+		    //获取当前时间，把时间减一，判断减一后，到0没有，没有继续
+			var times=Number($('#times').html());//获取时间并转成数字
+            //利用定时器把时间每一秒减少一次
+			var run=setInterval(function(){
+				 times--;//时间减一
+				 if(times>0){
+			        $('#times').html(times);//把计算后时间填写回id为times的标签内部
+				 }else{
+				    location.href='<?php echo BASE_URL?>index.php?c=home&a=index&admin=0';
+				 }
+			},1000);
+		</script>
+	</body>
+</html>

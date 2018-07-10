@@ -1,0 +1,205 @@
+﻿1. 请建立三个表
+    news
+	id（主键）  标题  描述 发布时间 内容 作者/来源  新闻图片
+	adminuser
+	id（主键）  账号名【英文加数字】 账号密码  昵称 电邮 联系电话  
+	product
+	id（主键）  产品名称 产品描述  添加时间 产品图片
+	
+	select  from where,order by,limit,in
+	
+	update  where set
+	
+	delete  from
+	
+	insert into,value,values
+	
+2.  设计一个简单新闻，产品，管理员html
+     news_index.html   输出所有数据表news的数据, 要按钮跳转到添加和更新和删除
+	 news_add.html     设计form表单
+	 news_update.html  设计form表单
+	 
+     adminuser_index.html  输出所有数据表adminuser的数据, 要按钮跳转到添加和更新和删除
+	 adminuser_add.html    设计form表单
+	 adminuser_update.html 设计form表单	
+	 
+     product_index.html    输出所有数据表product的数据, 要按钮跳转到添加和更新和删除
+	 product_add.html      设计form表单
+	 product_update.html   设计form表单
+	 
+3.分别建立home和admin文件夹，home保存前台  admin保存后台
+4.熟悉一个列表的php输出
+    php数据库操作流程：
+	     1.连接数据库
+		 2.设定php和mysql获取数据时候的字符集
+		 3.sql语句
+		 4.执行sql语句
+		 5.得到执行结果
+		 6.输出得到的结果在html
+	   
+5.熟悉一个添加的php设计
+         怎么判断表单提交了 => if(){}else{}   $_POST或者$_GET不是空的就是有提交了    empty(数组) true 空  false 有东西
+6.熟悉一个更新的php设计
+7.熟悉一个删除的php设计
+         删除前必须提醒  if(confirm('您真的要删除吗？')==false){return false;}else{location.href='http://localhost/comsite1805/admin/news_del.php'}
+
+8 第二阶段完整数据库搭建
+				select * from xxx where x
+				目的： 查询新闻中心这个分类下面的子分类
+				实现目的： 1.  where id in(5,6,7)
+						   2。 where id=5 or id=6
+						   3   where pid=2
+
+				目的查询国内新闻  where id=5
+				分类表
+				id   category_name   pid (顶级0)
+				1   关于我们         0
+				   
+				2   新闻中心         0
+				   
+				3   产品中心         0
+				   
+				4   banner           0
+
+				5   国内新闻         2
+
+				6   行业新闻         2
+
+				7   牵引力新闻       2
+				   
+				8   产品分类1        3
+
+				9   产品分类2        3
+				
+				10  首页轮播         4				
+
+				文章表
+				  id    title         category_id
+				   1  公司介绍        1
+				   
+				新闻表
+				  id  title           category_id
+				  1   我今天吃饭了    5
+				  
+				产品表    前天点击侧导航某个分类的时候，查出全部数据   select * from xxx_product where category_id=8
+				  id   pro_name       category_id
+				  1     xxxxx          8
+
+				xxx_adminuser   管理员表  增删改查  登录
+					username        管理员名
+					password        管理员密码
+					nickname        管理员昵称
+					mobile          管理员电话
+					email           管理员电邮
+					qq              管理员qq
+					sex             管理员性别
+					login_time      登录时间
+					admin_portrait  头像
+
+				xxx_article     公司介绍文章
+					title           文章名称
+					description     文章描述
+					content         文章内容
+					category_id     文章分类
+
+				xxx_bannar      图片轮播及内页bannar
+					bannar_name     图片名字（描述）
+					bannar_url      轮播超链接
+					bannar_info     图片地址路径
+					category_id     分类ID
+
+				xxx_category    前台内页侧导航，功能分类（比如bannar表要区分 首页轮播还是新闻banner或产品banner）
+					category_name   分类名称
+					pid             父亲分类的id
+				 
+				xxx_msg         前台留言
+					 msg_user    留言姓名
+					 msg_email   留言电邮
+					 msg_content 留言内容
+					 msg_phone   留言电话
+					 msg_QQ	     留言qq
+					 
+				xxx_nav         后台导航
+
+				xxx_news        前台新闻中心
+					title           新闻标题
+					description     新闻描述
+					content         新闻内容
+					ftime           发布时间
+					hits            点击数
+					news_photo      新闻图片
+					category_id     分类ID
+
+
+				xxx_product     前台产品中心
+					pro_name         产品名称
+					pro_photo        产品预览图
+					pro_photos       产品多图
+					pro_description  产品描述
+					pro_content      产品介绍
+
+				xxx_setup       前台比较固定的信息：公司地址，公司电话
+
+
+				xxx_link        前台友情链接
+					link_logo    logo图
+					link_url     链接地址
+
+
+8 textarea套上编辑器
+     1. 先拷贝kindeditor 到项目目录下面public文件夹
+	 2. 在header.html加载
+	     <link rel="stylesheet" href="Public/kindeditor/themes/default/default.css" />
+	     <script charset="utf-8" src="Public/kindeditor/kindeditor-min.js"></script>
+	    <script charset="utf-8" src="Public/kindeditor/lang/zh_CN.js"></script> 
+     3. 调用这个插件		
+
+         【form 里面 name一样】
+            var content,description;
+			KindEditor.ready(function(K) {
+				description = K.create('textarea[name="description"]', {
+					allowFileManager : true
+				});
+				content = K.create('textarea[name="content"]', {
+					allowFileManager : true
+				});
+			});	
+			
+	错误： $ is not defined  代表jq没有加载
+
+
+
+9 单入口
+  不允许直接访问php文件,所以访问都要经过单入口 ：根目录index.php
+        1. 公共文件可以在单入口加载
+        2. 如何判断访问是后台还是前台  admin=1  后台   admin=0  前台
+        3. 所有include路径都要习惯从根目录下的index.php去看加载路径
+		4. 假设  admin/login_index.php  => c=login&a=index&admin=1
+		5. 如何阻止访问人不用单入口   define('INCOMSITE',true);
+		   defined('INCOMSITE')  true 常量存在   false  常量不存在
+		   
+		6.  跳转过程可能问题：
+		  1   地址栏：http://localhost/comsite1805/admin/news_add.php
+		     设定跳转 ?c=adminuser&a=index&admin=1
+		
+		     执行跳转： 自动把设定跳转地址拼接到地址栏地址
+			 实际地址：
+			 http://localhost/comsite1805/admin/news_add.php?c=adminuser&a=index&admin=1
+			 
+			 
+		  2   地址栏：http://localhost/comsite1805/admin/news_add.php
+		    设定跳转 index.php?c=adminuser&a=index&admin=1
+		     实际地址：
+			 http://localhost/comsite1805/admin/index.php?c=adminuser&a=index&admin=1
+
+
+10 实现分页
+
+11 实现验证码登陆，退出，前台留言区域嵌套验证码
+12 实现留言
+
+
+
+		   
+
+

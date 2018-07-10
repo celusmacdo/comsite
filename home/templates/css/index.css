@@ -1,0 +1,653 @@
+.content {
+    width: 100%;
+    height: auto;
+}
+
+.content .about {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.content .title {
+    width: 400px;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+}
+
+.content .title h2 {
+    width: 100%;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.content .title h2:before {
+    content: " ";
+    width: 130px;
+    height: 1px;
+    background: #000;
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+}
+
+.content .title h2:after {
+
+    width: 130px;
+    height: 1px;
+    background: #000;
+    content: " ";
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+
+.content .title h5 {
+    clear: both;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.container {
+    width: 1200px;
+    height: 330px;
+    margin: 0 auto;
+    float: left;
+}
+
+.container img {
+    display: block;
+    width: 440px;
+    height: 320px;
+    margin-right: 80px;
+    float: left;
+}
+
+.container .text {
+    width: 520px;
+    font-family: "微软雅黑";
+    float: right;
+    margin-right: 100px;
+    font-weight: 400;
+	overflow: hidden;
+}
+
+.container .text h2 {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    height: 45px;
+    font-weight: 600;
+}
+
+.container .text p {
+    font-size: 14px;
+    text-indent: 2em;
+    color: #333;
+    line-height: 25px;
+}
+
+.container .text a {
+    display: block;
+    width: 50px;
+    height: 20px;
+    border: 1px solid #f8451b;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    float: right;
+    margin-top: 34px;
+}
+
+.content .product {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #edd8c9;
+}
+
+.product .title {
+    width: 400px;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+}
+
+.product .title h2 {
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.product ul {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.product ul li {
+    width: 250px;
+    height: 365px;
+    float: left;
+    background: #edd8c9;
+    margin: 0 70px;
+    position: relative;
+}
+
+.product ul li>a {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.product ul li>a img {
+    width: 250px;
+	height: 250px;
+}
+
+.product ul li span {
+    display: block;
+    width: 100%;
+    height: 62px;
+    text-align: center;
+    line-height: 80px;
+}
+
+.product ul li span a {
+    font-size: 18px;
+}
+
+.product ul li>p {
+    width: 100%;
+    height: 45px;
+    line-height: 20px;
+    font-size: 14px;
+    text-indent: 2em;
+	overflow: hidden;
+}
+
+.product ul li .hover {
+    display: none;
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+    background: rgba(236, 157, 139, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product ul li .hover p {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fff;
+    margin: 100px auto;
+    border-radius: 50px;
+}
+
+.product ul li .hover p span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 15px;
+    margin: 13px auto;
+}
+
+.product ul li:hover .hover {
+
+    display: block;
+}
+
+.product ul li:hover a {
+    color: #f8451b;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.product>a {
+    display: block;
+    width: 50px;
+    height: 20px;
+    border: 1px solid #f8451b;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    margin: 50px auto;
+}
+
+.content .news {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.news .center {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.news .center .list {
+    width: 450px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+
+.news .center .list a {
+    height: auto;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.news .center .list .date {
+    width: 200px;
+    height: 170px;
+    position: absolute;
+    z-index: 3;
+    left: 5px;
+    top: 50px;
+    color: #fff;
+}
+
+.news .center .list .date p {
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.news .center .list .date span {
+    width: 80px;
+    height: 1px;
+    background: #fff;
+    display: block;
+    margin-left: 60px;
+}
+
+.news .center .list .date b:first-child {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.news .center .list .date b i {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.news .center .list .date em {
+    display: inline-block;
+    width: 150px;
+    font-style: normal;
+    font-size: 18px;
+    text-align: right;
+}
+
+.news .center .list h3 span {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #39393a;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    margin-left: 40px;
+}
+
+.news .center .list .text {
+    width: 100%;
+	height: 75px;
+    overflow: hidden;
+    background-color: rgba(249, 242, 243, 0.5);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.news .center .list .text p {
+    text-indent: 1em;
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    margin-left: 20px;
+    line-height: 25px;
+    width: 420px;
+}
+
+.news .center .list {
+    margin-bottom: 50px;
+}
+
+.news .center .list img{
+	width: 450px;
+	height: 415px;
+}
+
+.news .center ul {
+    width: 750px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+}
+
+.news .center ul li {
+    width: 225px;
+    height: 420px;
+    float: left;
+    margin-left: 20px;
+    position: relative;
+	overflow: hidden;
+}
+
+.news .center ul li .date {
+    width: 100px;
+    height: 35px;
+    font-family: "微软雅黑";
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 10px;
+    color: #fff;
+}
+
+.news .center ul li .date p {
+    font-size: 18px;
+    display: inline-block;
+}
+
+.news .center ul li .date b {
+    font-size: 10px;
+}
+
+.news .center ul li .date span {
+    width: 80px;
+    height: 1px;
+    background: #ccc;
+    display: block;
+    float: right;
+}
+
+.news .center ul li h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+	overflow: hidden;
+	height: 20px;
+}
+
+.news .center ul li h3 a {
+    font-size: 15px;
+}
+
+.news .center ul li:hover h3 a {
+    color: #f8451b;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.news .center ul li p {
+    text-indent: 1em;
+    text-align: left;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 30px;
+}
+
+.news .center ul li a img {
+    width: 225px;
+    height: 240px;
+}
+
+.news .center ul li a .hover {
+    display: none;
+    width: 100%;
+    height: 240px;
+    background: rgba(236, 157, 139, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.news ul li a .hover p {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fff;
+    margin: 80px auto;
+    border-radius: 50px;
+}
+
+.news ul li a .hover p span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 15px;
+    margin: 13px auto;
+}
+
+.news ul li:hover a .hover {
+    display: block;
+}
+
+.news .center>a {
+    display: block;
+    width: 50px;
+    height: 20px;
+    border: 1px solid #f8451b;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    margin: 50px auto;
+    float: right;
+}
+
+.content .contact {
+    width: 100%;
+    height: auto;
+    background: url(../img/033.png) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.contact .center {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.contact .center .title h2 {
+    color: #fff;
+}
+
+.contact .center .title h2:before {
+    content: " ";
+    width: 130px;
+    height: 1px;
+    background: #fff;
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+}
+
+.contact .center .title h2:after {
+
+    width: 130px;
+    height: 1px;
+    background: #fff;
+    content: " ";
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+
+.contact .center .map {
+    width: 860px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.contact .center .map img {
+    width: 340px;
+    height: 340px;
+    float: left;
+    display: block;
+}
+
+.contact .center .call {
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    margin-left: 100px;
+    float: left;
+}
+
+.contact .center .call p {
+    width: 250px;
+    height: 35px;
+    border: 1px solid #dde7ea;
+    border-radius: 10px;
+    font-size: 18px;
+    float: right;
+    margin-bottom: 30px;
+    padding: 0 5px;
+    line-height: 30px;
+}
+
+.contact .center .call p:first-child {
+    font-size: 18px;
+    border: 0px;
+    color: #fff;
+}
+
+.contact .center .call p span {
+    color: #fff;
+    margin-right: 10px;
+    float: left;
+}
+
+.contact .center .call p input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    padding: 0 10px;
+    color: #fff;
+    font-family: "微软雅黑";
+}
+
+.contact .center .call input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.contact .center .call input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #fff;
+}
+
+.contact .center .call input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
+}
+
+.contact .center .call input:-ms-input-placeholder {
+    color: #fff;
+}
+
+.contact .center .call textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.contact .center .call textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: #fff;
+}
+
+.contact .center .call textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
+}
+
+.contact .center .call textarea:-ms-input-placeholder {
+    color: #fff;
+}
+
+.contact .center .call input.submit {
+    border: 1px solid #dde7ea;
+    border-radius: 10px;
+    width: 70px;
+    height: 32px;
+    float: right;
+    background: rgba(255, 255, 255, 0);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.contact .center .call p:nth-child(4) {
+    height: 75px;
+}
+
+.contact .center .call textarea {
+    width: 100%;
+    height: 70px;
+    float: right;
+    background: rgba(255, 255, 255, 0);
+    padding-top: 5px;
+    color: #fff;
+    line-height: 25px;
+    font-family: "微软雅黑";
+    text-indent: 10px;
+}
+
+.contact .center b {
+    display: block;
+    width: 125px;
+    height: 40px;
+    background: #f8451b;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    z-index: 100;
+}
+
+.contact .center i {
+    width: 125px;
+    height: 40px;
+    background: #f8451b;
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: -20px;
+    z-index: 100;
+}

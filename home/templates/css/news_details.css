@@ -1,0 +1,127 @@
+.content {
+    width: 100%;
+    height: auto;
+}
+
+.content .top {
+    width: 1200px;
+    height: 135px;
+    margin: 0 auto;
+    background-color: #d1c0a5;
+}
+
+.content .top div {
+    float: left;
+    width: 230px;
+    height: 100%;
+    font-size: 14px;
+    background: url(../img/035.png);
+    text-align: center;
+}
+
+.top div span {
+    display: block;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    color: white;
+    margin-top: 40px;
+}
+
+.top div p {
+    font-size: 11px;
+    font-family: "Arial";
+    color: white;
+}
+
+.content .top ul {
+    width: 970px;
+    height: 135px;
+    float: right;
+}
+
+.content .top ul li {
+    float: left;
+    display: block;
+    margin-right: 40px;
+    height: 135px;
+    width: 200px;
+    text-align: center;
+}
+
+.content .top ul .on a {
+    text-decoration: underline;
+    color: #333;
+    font-style: italic;
+}
+
+.content .top ul li a {
+    font-size: 24px;
+    font-family: "微软雅黑";
+    line-height: 135px;
+    color: #ffffff;
+}
+
+.content .top ul li a:hover {
+    background-color: #d1c0a5;
+    color: #333333;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.main {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    line-height: 90px;
+}
+
+.content h2 {
+    width: 100%;
+    font-size: 24px;
+    font-family: "微软雅黑";
+    color: #333333;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.main img {
+    width: 370px;
+    height: 210px;
+    margin: 9px;
+}
+
+.main p {
+    width: 100%;
+    font-size: 14px;
+    font-family: "Regular";
+    color: #333333;
+    line-height: 30px;
+    text-indent: 2em;
+}
+
+.flip {
+    width: 1200px;
+    height: 25px;
+    overflow: hidden;
+    margin: 65px auto 80px auto;
+}
+
+.flip a {
+    width: 70px;
+    height: 25px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    float: left;
+    display: block;
+    line-height: 25px;
+    border: 1px solid #f8451b;
+    text-align: center;
+}
+
+.flip a:hover {
+    text-decoration: underline;
+}
+
+.flip a:last-child {
+    float: right;
+}

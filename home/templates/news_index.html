@@ -1,0 +1,57 @@
+
+    <div class="banner">
+        <img src="<?php echo $news_banner['banner_info']; ?>" alt="">
+    </div>
+    <div class="content">
+        <div class="top">
+            <div>
+                <span>新闻中心</span>
+                <p>NEWS CENTER</p>
+            </div>
+            <ul>
+                <?php foreach($cat_nav AS $k=>$v):?>
+                <li <?php if($category_id==$v['id']):?>class="on"<?php endif;?>>
+                	<a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=index&category_id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a>
+                </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+        <div class="news">
+            <ul>
+				<?php foreach($rs['res'] AS $k=>$v):?>
+                <li>
+                    <a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=details&category_id=<?php echo $v['category_id'];?>&id=<?php echo $v['id'];?>">
+                        <img src="<?php echo $v['news_photo']; ?>" alt="">
+                        <div class="date">
+                            <p><?php echo date('Y',$v['ftime']); ?></p>
+                            <b><?php echo date('m d',$v['ftime']); ?></b>
+                            <span></span>
+                        </div>
+                        <div class="hover">
+                            <p>
+                                <span></span>
+                            </p>
+                        </div>
+                    </a>
+                    <div class="main">
+                        <h3>
+                            <a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=details&category_id=<?php echo $v['category_id'];?>&id=<?php echo $v['id'];?>"><?php echo $v['title'];?></a>
+                        </h3>
+                        <p><?php echo $v['description'];?></p>
+                        <a href="<?php echo BASE_URL;?>index.php?c=news&a=index&admin=0">MORE</a>
+                    </div>
+                </li>
+                <?php endforeach;?>
+            </ul>
+            <div class="page">
+				<?php echo $rs['page'];?>
+<!--                <a href="#">首页</a>
+                <a href="#" class="on">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">...</a>
+                <a href="#">末页</a>-->
+            </div>
+        </div>
+    </div>
+		

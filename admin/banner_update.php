@@ -1,0 +1,31 @@
+<?php
+checklogin();
+if(defined('INCOMSITE')==false){
+	echo '<script>history.back();</script>';
+	exit;
+}
+$title='图片';
+$cid=db_select('category','*','','','pid=21','','','ASC');
+$id=$_GET['id'];
+$rs=db_find('banner','id='.$id);
+/*
+1.查询回来
+2.表单提交修改
+*/
+if(empty($_POST)==false){
+	if(empty($_FILES)==false){
+		//var_dump($_FILES);exit;
+		foreach($_FILES AS $k=>$v){
+			//有做图片更新才上传
+			if(empty($v['name'])==false){
+			$_POST['banner_info']=Uploadfile($v);
+			}
+		}
+	}
+    db_update('banner');
+}
+$rs=db_find('banner','id='.$_GET['id']);
+include('templates/header.html');
+include('templates/banner_update.html');
+include('templates/footer.html');
+?>

@@ -1,0 +1,239 @@
+<!-- 头部结束 -->
+<!-- banner开始 -->
+    <div class="benner">
+        <div class="js-silder">
+            <div class="silder-scroll">
+                <div class="silder-main">
+					<?php foreach($home_banner AS $v){ ?>
+                    <div class="silder-main-img">
+                        <a href="<?php echo BASE_URL;?>index.php?c=product&a=index&admin=0">
+                            <img src="<?php echo $v['banner_info']; ?>" alt="">
+                        </a>
+                    </div>
+					<?php }; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="about">
+            <div class="title">
+                <h2>公司介绍</h2>
+                <h5>COMPANY INTRODUCTION</h5>
+            </div>
+            <div class="container">
+                <a href="<?php echo BASE_URL;?>index.php?c=about&a=index&admin=0&id=<?php echo $about['id']; ?>">
+                    <img src="<?php echo $about['photo']?>" alt="">
+                </a>
+                <div class="text">
+                    <h2><?php echo $about['title']?></h2>
+                    <p><?php echo $about['description']?></p>
+                    <a href="<?php echo BASE_URL;?>index.php?c=about&a=index&admin=0">MORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <div class="title">
+                <h2>产品中心</h2>
+                <h5>PRODUCT CENTER</h5>
+            </div>
+            <ul>
+				<?php foreach($product AS $v){ ?>
+                <li>
+                    <a href="<?php echo BASE_URL;?>index.php?c=product&a=details&admin=0&id=<?php echo $v['id']; ?>">
+                        <img src="<?php echo $v['pro_photo']; ?>" alt="">
+                        <div class="hover">
+                            <p>
+                                <span></span>
+                            </p>
+                        </div>
+                    </a>
+                    <span>
+                        <a href="<?php echo BASE_URL;?>index.php?c=product&a=details&admin=0&id=<?php echo $v['id']; ?>"><?php echo $v['pro_name']; ?></a>
+                    </span>
+                </li>
+				<?php }; ?>
+            </ul>
+            <a href="<?php echo BASE_URL;?>index.php?c=product&a=index&admin=0">MORE</a>
+        </div>
+		
+        <div class="news">
+            <div class="center">
+                <div class="title">
+                    <h2>新闻中心</h2>
+                    <h5>NEWS CENTER</h5>
+                </div>
+                <div class="list">
+                    <a href="<?php echo BASE_URL;?>home/news_details.php">
+                        <img src="<?php echo $article['photo']?>" alt="">
+                        <div class="date">
+                            <p><?php echo date('Y',$news[0]['ftime']); ?></p>
+                            <span></span>
+                            <b><?php echo date('m',$news[0]['ftime']); ?>
+                                <i></i><?php echo date('d',$news[0]['ftime']); ?></b>
+                        </div>
+                    </a>
+                    <div class="text">
+                        <h3>
+                            <span></span>
+                            <a href="<?php echo BASE_URL;?>home/news_details.php"><?php echo $article['title']?></a>
+                        </h3>
+                        <p><?php echo $article['description']?></p>
+                    </div>
+                </div>
+                <ul>
+					<?php foreach($news AS $v){ ?>
+                    <li>
+                        <a href="<?php echo BASE_URL;?>index.php?c=news&a=details&category_id=<?php echo $v['category_id'];?>&id=<?php echo $v['id'];?>">
+                            <img src="<?php echo $v['news_photo']; ?>" alt="">
+                            <div class="date">
+                                <p><?php echo date('Y',$news[0]['ftime']); ?></p>
+                                <b><?php echo date('m d',$news[0]['ftime']); ?></b>
+                                <span></span>
+                            </div>
+                            <div class="hover">
+                                <p>
+                                    <span></span>
+                                </p>
+                            </div>
+                        </a>
+                        <h3>
+                            <a href="<?php echo BASE_URL;?>index.php?c=news&a=details&admin=0&id=<?php echo $v['id']; ?>"><?php echo $v['title']; ?></a>
+                        </h3>
+                        <p><?php echo $v['description']; ?></p>
+                    </li>
+					<?php };?>
+                </ul>
+                <a href="<?php echo BASE_URL;?>index.php?c=news&a=index&admin=0">MORE</a>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="center">
+                <div class="title">
+                    <h2>联系我们</h2>
+                    <h5>ABOUT US</h5>
+                </div>
+                <div class="map">
+                    <img src="<?php echo BASE_URL;?>home/templates/img/034.png" alt="">
+                    <div class="call">
+                        <form id="" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                            <p>W E L O M E T O Y N G T E</p>
+                            <p>
+                                <input id="msg_user" type="text" value="" name="msg_user" placeholder="姓名" maxlength="20">
+                            </p>
+                            <p>
+                                <input id="msg_email" type="text" value="" name="msg_email" placeholder="邮箱" maxlength="20">
+                            </p>
+                            <p>
+                                <textarea id="msg_content" name="msg_content" placeholder="留言"></textarea>
+                            </p>
+							<p>
+								<input id="vcode" name="vcode" type="text" value="" placeholder="验证码" maxlength="4" />
+							</p>
+							<h2>
+									<a href="###" class="pull-left" id="changevcode"><img style="width: 80px; height: 30px; margin-left: 60px;" id="showvcode" src="<?php echo BASE_URL?>index.php?c=vcode&a=index&admin=1"></a>
+							</h2>
+                            <input type="submit" value="提交" class="submit">
+                        </form>
+                    </div>
+                </div>
+                <b></b>
+                <i></i>
+            </div>
+        </div>
+    </div>
+	
+	<script src="<?php echo BASE_URL?>admin/templates/assets/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript">
+		//验证码函数
+		$(function(){
+			$('#changevcode').click(function(){
+				$('#showvcode').attr('src','<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1&'+Math.round(Math.random()*1000));
+			});
+		});
+		$('.submit').click(function(){
+			if($('#msg_user').val() == ''){
+				alert('请输入姓名');
+				return false;
+			}else if($('#msg_email').val() == ''){
+				alert('请输入邮箱');
+				return false;
+			}else if($('#msg_content').val() == ''){
+				alert('请输入内容');
+				return false;
+			}else{
+				$.post("index.php?c=contact&a=index", { vcode:$('#vcode').val(),msg_user:$('#msg_user').val(),msg_phone:$('#msg_phone').val(),msg_email:$('#msg_email').val(),msg_content:$('#msg_content').val() },function(data){
+					if(data == 2){
+						alert("请看清楚验证码");
+						$('#showvcode').attr('src','<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1&'+Math.round(Math.random()*1000));
+					}else if(data != 2){
+						alert("提交成功");history.back();
+					}
+				})
+				return false;
+				
+			}
+			
+			
+		})
+		
+	</script>
+	<script>
+	$(function(){
+	   var error=0;//定义错误次数
+	   //正则表达：判断一段字符串中是否有你想查找的东西   结果：null
+	   /*
+	   /^$/  从一个字符串的开始到一个字符串的结束
+	         /^$/.exec($('#username').val())   判断账号的全部字符
+	   [] 范围
+	   [a-z]  一个小写
+	   [A-Z]  一个大写
+	   [0-9]  一个数字
+	   [^0-9]  除了数字以外的字符
+	   [^a-zA-Z] 除了英文字母以外的字符
+	   
+	   {最少几个,最多几个}   最小最大值
+	   {0,}  最少一个都没有，最多可以是无限
+	   {1,}  最少一个，最多无限
+	   {0,1} 最少一个都没有，最多一个
+	   {17}  最少17个
+	   
+	   (可能1|可能2)
+	   */
+	    //检查电话
+	   function checkMobile(){
+	   		var rs='';
+	   		if($('#msg_mobile').val().length>=0){
+	   			//正则表达.exec(字符串)
+	   			rs=/^1(38|35|36|58)[0-9]{8}$/.exec($('#msg_mobile').val());
+	   	if(rs==null){
+	   			$('#msg').css('color','red');
+	   			$('#msg').html('电话格式不正确');
+	   		error++;
+	   	}else{
+	   			error--;
+	   			$('#msg').css('color','blue');
+	   			$('#msg').html('填写电话正确');
+	   	}
+	   	}  
+	   }
+	   //管理员账号的单行文本输入框失去焦点的时候
+		 
+	   $('#msg_mobile').blur(function(){
+					checkMobile();
+	   });
+	    //表单提交的时候
+	   $('#msgForm').submit(function(){
+			checkMobile();
+	     //如果错误大于0,代表有很多错
+		 if(error>0){      
+		   //如果表单提交的时候，要先检查表单的元素，就必须阻止表单提交
+		   return false;
+		 }else{
+		   return true;
+		 }
+	
+	   }); 
+	});
+	
+	</script>

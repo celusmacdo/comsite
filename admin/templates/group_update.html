@@ -1,0 +1,156 @@
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">管理系统</a>
+							</li>
+
+							<li>
+								<a href="<?php echo BASE_URL?>index.php?c=<?php echo C?>&a=index&admin=1"><?php echo $title; ?>管理中心</a>
+							</li>
+							<li class="active"><?php echo $title; ?>更新</li>
+						</ul><!-- .breadcrumb -->
+					</div>
+
+					<div class="page-content">
+						<div class="form-group" style="margin-bottom: 45px;">
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+							<div class="col-sm-9">
+							<button class="btn btn-info btn-sm" id="selectAll">全选</button>&nbsp;<button class="btn btn-info btn-sm" id="noSelect">不选</button>&nbsp;<button class="btn btn-info btn-sm" id="selectReverce">反选</button>
+							</div>
+						</div>
+						<form class="form-horizontal" role="form" action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+						
+							<input type="hidden" name="id" value="<?php echo $rs['id'];?>" />
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><font color="red">*</font>角色名称</label>
+							
+								<div class="col-sm-9">
+									<input type="text" id="group_name" placeholder="group_name" name="group_name" value="<?php echo $rs['group_name'];?>" class="col-xs-10 col-sm-5" />
+									<span class="help-inline col-xs-12 col-sm-7">
+										<span class="middle" id="name_msg"></span>
+									</span>
+								</div>
+							</div>
+							<div>
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><font color="red">*</font>权限分配</label>
+
+								<div class="widget-main col-sm-9" id="navShow">
+								<?php foreach($navshow['res'] as $k=>$v):?>
+								<?php if($v['pid']==0):?>
+									<input type="checkbox"  name="group_allow[]"  value="<?php echo $v['id'];?>"  <?php if(!empty($rs['group_allow']) && in_array($v['id'],$rs['group_allow'])):?>checked=checked<?php endif;?> /><?php echo $v['nav_name'];?><br/>
+									<?php foreach($navshow['res'] as $key=>$value):?>
+									<?php if($value['pid']==$v['id']):?>
+									<input type="checkbox"  name="group_allow[]"  value="<?php echo $value['id'];?>" <?php if(!empty($rs['group_allow']) && in_array($v['id'],$rs['group_allow'])):?>checked=checked<?php endif;?> /><?php echo $value['nav_name'];?>
+									<?php endif;?>
+									<?php endforeach;?><br/>
+								<?php endif;?>
+								<?php endforeach;?>
+								</div>
+							</div>
+							<div class="clearfix">
+								<div class="col-md-offset-3 col-md-9">
+									<button class="btn btn-info" type="submit" name=""  >
+										<i class="icon-ok bigger-110"></i>
+										提交
+									</button>
+
+										&nbsp; &nbsp; &nbsp;
+									<button class="btn" type="reset" name=""  >
+										<i class="icon-undo bigger-110"></i>
+										重置
+									</button>
+								</div>
+							</div>
+						</form>
+					</div><!-- /.page-content -->
+				</div><!-- /.main-content -->
+
+				<div class="ace-settings-container" id="ace-settings-container">
+					<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+						<i class="icon-cog bigger-150"></i>
+					</div>
+
+					<div class="ace-settings-box" id="ace-settings-box">
+						<div>
+							<div class="pull-left">
+								<select id="skin-colorpicker" class="hide">
+									<option data-skin="default" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+							</div>
+							<span>&nbsp; Choose Skin</span>
+						</div>
+
+						<div>
+							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+							<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+						</div>
+
+						<div>
+							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+							<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+						</div>
+
+						<div>
+							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+							<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+						</div>
+
+						<div>
+							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+							<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+						</div>
+
+						<div>
+							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+							<label class="lbl" for="ace-settings-add-container">
+								Inside
+								<b>.container</b>
+							</label>
+						</div>
+					</div>
+				</div><!-- /#ace-settings-container -->
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+<script>
+$(function(){
+    //全选点击
+    $('#selectAll').click(function(){
+	    //凡是多次切换的标签，操作属性时候不能用attr，要用prop
+	    $('#navShow input').prop('checked',true);
+	});
+	//不选点击
+    $('#noSelect').click(function(){
+	    $('#navShow input').prop('checked',false);
+	});
+	//反选点击
+    $('#selectReverce').click(function(){
+	     //必须遍历每一个input进行判断   
+	     $.each($('#navShow input'),function(k,v){
+             //true :选中   false：没有选中  
+             if($('#navShow input').eq(k).prop('checked')==true){
+			     $('#navShow input').eq(k).prop('checked',false);
+			 }else{
+			     $('#navShow input').eq(k).prop('checked',true);
+			 }
+		 });
+	});
+}); 
+</script>

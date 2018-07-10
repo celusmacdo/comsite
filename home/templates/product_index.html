@@ -1,0 +1,46 @@
+
+    <div class="banner">
+        <img src="<?php echo $product_banner['banner_info']; ?>" alt="">
+    </div>
+    <div class="content">
+        <div class="top">
+            <div>
+                <span>产品中心</span>
+                <p>PRODUCT CENTER</p>
+            </div>
+            <ul>
+                <?php foreach($cat_nav AS $k=>$v):?>
+                <li <?php if($category_id==$v['id']):?>class="on"<?php endif;?>>
+                	<a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=index&category_id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a>
+                </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+        <div class="procuct">
+            <ul class="list">
+				<?php foreach($rs['res'] AS $k=>$v):?>
+                <li>
+                    <span></span>
+                    <a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=details&id=<?php echo $v['id'];?>&category_id=<?php echo $v['category_id'];?>">
+                        <img src="<?php echo $v['pro_photo']?>" alt="">
+                        <p><?php echo $v['pro_name']?></p>
+                        <div class="hover">
+                            <b>
+                                <i></i>
+                            </b>
+                        </div>
+                    </a>
+                </li>
+				<?php endforeach;?>
+            </ul>
+            <div class="page">
+				<?php echo $rs['page'];?>
+                <!--<a href="#">首页</a>
+                <a href="#" class="on">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">...</a>
+                <a href="#">末页</a>-->
+            </div>
+        </div>
+    </div>

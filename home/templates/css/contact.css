@@ -1,0 +1,271 @@
+.content {
+    width: 100%;
+    height: auto;
+}
+
+.content .top {
+    width: 1200px;
+    height: 135px;
+    margin: 0 auto;
+    background-color: #d1c0a5;
+}
+
+.content .top div {
+    float: left;
+    width: 230px;
+    height: 100%;
+    font-size: 14px;
+    background: url(../img/035.png);
+    text-align: center;
+}
+
+.top div span {
+    display: block;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    color: white;
+    margin-top: 40px;
+}
+
+.top div p {
+    font-size: 11px;
+    font-family: "Arial";
+    color: white;
+}
+
+.content .top ul {
+    width: 970px;
+    height: 135px;
+    float: right;
+}
+
+.content .top ul .on a {
+    text-decoration: underline;
+    color: #333;
+    font-style: italic;
+}
+
+.content .top ul li {
+    float: left;
+    display: block;
+    margin-right: 40px;
+    height: 135px;
+    width: 200px;
+    text-align: center;
+}
+
+.center .center-top ul .on a {
+    text-decoration: underline;
+    color: #333;
+    font-style: italic;
+}
+
+.content .top ul li a {
+    font-size: 24px;
+    font-family: "微软雅黑";
+    line-height: 135px;
+    color: #ffffff;
+}
+
+.content .top ul li a:hover {
+    background-color: #d1c0a5;
+    color: #333333;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.map {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.center {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
+.center ul {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 100px;
+    float: left;
+	padding-bottom: 70px;
+}
+
+.center ul li span {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #333;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.center ul li p {
+	height: 25px;
+	overflow: hidden;
+    display: inline-block;
+}
+
+.center ul li {
+	width: 440px;
+    margin: 15px auto;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+.form {
+    width: 550px;
+    overflow: hidden;
+    padding-top: 25px;
+	margin: 0 auto 70px auto;
+}
+
+.form p {
+    width: 150px;
+    height: 30px;
+    border: 1px solid #f8451b;
+    border-radius: 10px;
+    padding: 5px;
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 40px;
+    position: relative;
+    line-height: 18px;
+    overflow: hidden;
+}
+
+.form p input {
+    width: 100%;
+    font-size: 12px;
+    font-family: "微软雅黑";
+    line-height: 20px;
+    padding: 0 5px;
+}
+
+.form input[type="submit"],
+.form input[type="reset"] {
+    cursor: pointer;
+}
+
+.form p:nth-child(3) {
+    margin-right: 0px;
+}
+
+.form p:nth-child(4) {
+    width: 550px;
+    height: 250px;
+    border: 1px solid #f8451b;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.form p:nth-child(5) {
+    margin-right: 10px;
+}
+
+.form p span {
+    font-family: "微软雅黑";
+    font-size: 12px;
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    z-index: 2;
+}
+
+input::-webkit-input-placeholder {
+    color: #000;
+}
+
+input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #000;
+}
+
+input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #000;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #000;
+}
+
+input:-ms-input-placeholder {
+    color: #000;
+}
+
+.form textarea {
+    float: left;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 5px;
+    line-height: 20px;
+}
+
+.form img {
+    float: left;
+    margin-right: 125px;
+    cursor: pointer;
+}
+
+.form .button {
+    width: 80px;
+    height: 30px;
+    background: #f8451b;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.content .online{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.content .online .main {
+    width: 1200px;
+    height: auto;
+    margin-top: 70px;
+}
+
+.content .online .main h2 {
+    font-size: 18px;
+    font-family: "微软雅黑";
+    text-align: center;
+    color: #333;
+    margin-top: 70px;
+}
+
+.content .online .main h2:hover {
+    text-decoration: underline;
+}
+
+.content .online .main img {
+    width: 370px;
+    height: 210px;
+    margin: 8px;
+}
+
+.content .online .main div {
+    width: 1200px;
+    height: auto;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    line-height: 30px;
+}
+
+.content .online .main p {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #333;
+    font-weight: 400;
+    text-indent: 2em;
+}

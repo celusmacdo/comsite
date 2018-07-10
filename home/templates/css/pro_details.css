@@ -1,0 +1,237 @@
+.content {
+    width: 100%;
+    height: auto;
+}
+
+.content .top {
+    width: 1200px;
+    height: 135px;
+    margin: 0 auto;
+    background-color: #d1c0a5;
+}
+
+.content .top ul .on a {
+    text-decoration: underline;
+    font-style: italic;
+    color: #333;
+}
+
+.content .top div {
+    float: left;
+    width: 230px;
+    height: 100%;
+    font-size: 14px;
+    background: url(../img/035.png);
+    text-align: center;
+}
+
+.top div span {
+    display: block;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    color: white;
+    margin-top: 40px;
+}
+
+.top div p {
+    font-size: 11px;
+    font-family: "Arial";
+    color: white;
+}
+
+.content .top ul {
+    width: 970px;
+    height: 135px;
+    float: right;
+}
+
+.content .top ul li {
+    float: left;
+    display: block;
+    margin-right: 40px;
+    height: 135px;
+    width: 200px;
+    text-align: center;
+}
+
+.content .top ul li a {
+    font-size: 24px;
+    font-family: "微软雅黑";
+    line-height: 135px;
+    color: #ffffff;
+}
+
+.content .top ul li a:hover {
+    background-color: #d1c0a5;
+    color: #333333;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.center {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.center .location {
+    width: 100%;
+    height: auto;
+    border-right: 1px solid #dadada;
+    overflow: hidden;
+	position: relative;
+	padding-bottom: 20px;
+}
+
+.center .location .main {
+    width: 410px;
+    height: 410px;
+    float: left;
+    border: 1px solid #dadada;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 100px;
+}
+
+.center .location .main img{
+	display: block;
+	margin: 0 auto;
+	width: 300px;
+	height: 300px;
+}
+
+.center .location .table {
+    width: 620px;
+    height: auto;
+    float: left;
+    font-family: "微软雅黑";
+    margin-left: 50px;
+    margin-top: 100px;
+    font-size: 14px;
+}
+
+.center .location .table h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.center .location .table ul {
+    width: 100%;
+
+    border-top: 1px solid #dadada;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.center .location .table ul li {
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+    text-align: center;
+    padding-left: 120px;
+}
+
+.center .location .table ul li span {
+    width: 10px;
+    height: 10px;
+    background: #f8451b;
+    display: block;
+    float: left;
+    margin-top: 12px;
+}
+
+.center .location .table ul li p {
+    line-height: 35px;
+    margin-left: 20px;
+    width: 300px;
+    height: auto;
+}
+
+.center .location span:last-child {
+    width: 20px;
+    height: 20px;
+    background: #f8451b;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.center .text {
+    width: 100%;
+    height: 520px;
+    float: left;
+}
+
+.text span {
+    width: 20px;
+    height: 20px;
+    background: #f8451b;
+    display: block;
+    float: left;
+}
+
+.center .text ul {
+    width: 1200px;
+    height: 440px;
+    border: 1px solid #dadada;
+    line-height: 15px;
+    padding: 50px 0;
+}
+
+.center .text ul li {
+    width: 100%;
+    height: 50%;
+}
+
+.center .text h2 {
+    width: 135px;
+    height: 45px;
+    background-color: #f8451b;
+    color: white;
+    border-radius: 5px;
+    line-height: 45px;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 18px;
+    float: left;
+    margin-left: 105px;
+    margin-top: 50px;
+}
+
+.center .text p {
+    width: 770px;
+
+    float: left;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 29px;
+    margin-left: 90px;
+}
+
+.flip {
+    width: 1200px;
+    height: 25px;
+    overflow: hidden;
+    margin: 65px auto 80px auto;
+}
+
+.flip a {
+    width: 70px;
+    height: 25px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    float: left;
+    display: block;
+    line-height: 25px;
+    border: 1px solid #f8451b;
+    text-align: center;
+}
+
+.flip a:hover {
+    text-decoration: underline;
+}
+
+.flip a:last-child {
+    float: right;
+}
+

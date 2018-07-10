@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $title;?></title>
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>home/templates/css/benner.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>home/templates/css/public.css" type="text/css">
+    <?php if(C=='home' && A=='index'):?>
+    <link href="<?php echo BASE_URL;?>home/templates/css/index.css" rel="stylesheet">
+    <?php elseif(C=='about' && A=='index'):?>
+    <link href="<?php echo BASE_URL;?>home/templates/css/about.css" rel="stylesheet">
+    <?php elseif(C=='news' && A=='index'):?>
+    <link href="<?php echo BASE_URL;?>home/templates/css/news.css" rel="stylesheet">
+    <?php elseif(C=='news' && A=='details'):?>
+    <link href="<?php echo BASE_URL;?>home/templates/css/news_details.css" rel="stylesheet">
+    <?php elseif(C=='product' && A=='index'):?>
+    <link href="<?php echo BASE_URL;?>home/templates/css/product.css" rel="stylesheet">
+    <?php elseif(C=='product' && A=='details'):?>
+    <link href="<?php echo BASE_URL;?>home/templates/css/pro_details.css" rel="stylesheet">
+    <?php elseif(C=='contact' && A=='index'):?>
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>home/templates/css/map.css">
+    <link href="<?php echo BASE_URL;?>home/templates/css/contact.css" rel="stylesheet">
+    <?php endif;?>
+	<script src="<?php echo BASE_URL?>admin/templates/assets/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+    <div class="header">
+    	<div class="top">
+    		<a href="<?php echo BASE_URL;?>index.php?c=home&a=index&admin=0">
+    			<img src="<?php echo BASE_URL;?>home/templates/img/logo.png" alt="">
+    		</a>
+    		<ul class="nav">
+    			<li <?php if(C=='home'):?>class="on"<?php endif;?>>
+    				<a href="<?php echo BASE_URL;?>index.php">首页</a>
+    			</li>
+				<?php foreach($nav AS $k=>$v){ ?>
+    			<li <?php if(C==$v['c']):?>class="on"<?php endif;?>>
+    				<a href="<?php echo BASE_URL;?>index.php?c=<?php echo $v['c']; ?>&a=<?php echo $v['a']; ?>"><?php echo $v['category_name']; ?></a>
+    			</li>
+    			<?php }; ?>
+    		</ul>
+    	</div>
+    </div>
+    </div>

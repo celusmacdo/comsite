@@ -1,0 +1,20 @@
+<?php
+checklogin();
+if(defined('INCOMSITE')==false){
+	echo '<script>history.back();</script>';
+	exit;
+}
+$title='留言';
+/*
+1.查询回来
+2.表单提交修改
+*/
+if(empty($_POST)==false){
+    db_update('msg');
+}
+$id=$_GET['id'];
+$rs=db_find('msg','id='.$id);
+include('templates/header.html');
+include('templates/contact_update.html');
+include('templates/footer.html');
+?>

@@ -1,0 +1,115 @@
+.content {
+    width: 100%;
+    height: auto;
+}
+
+.content .top {
+    width: 1200px;
+    height: 135px;
+    margin: 0 auto;
+    background-color: #d1c0a5;
+}
+
+.content .top div {
+    float: left;
+    width: 230px;
+    height: 100%;
+    font-size: 14px;
+    background: url(../img/035.png);
+    text-align: center;
+}
+
+.top div span {
+    display: block;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    color: white;
+    margin-top: 40px;
+}
+
+.top div p {
+    font-size: 11px;
+    font-family: "Arial";
+    color: white;
+}
+
+.content .top ul {
+    width: 970px;
+    height: 135px;
+    float: right;
+}
+
+.content .top ul li {
+    float: left;
+    display: block;
+    margin-right: 40px;
+    height: 135px;
+    width: 200px;
+    text-align: center;
+}
+
+.content .top ul .on a {
+    text-decoration: underline;
+    color: #333;
+    font-style: italic;
+}
+
+.content .top ul li a {
+    font-size: 24px;
+    font-family: "微软雅黑";
+    line-height: 135px;
+    color: #ffffff;
+}
+
+.content .top ul li a:hover {
+    background-color: #d1c0a5;
+    color: #333333;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.content .center {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.content .center .main {
+    width: 1200px;
+    height: auto;
+    margin-top: 70px;
+}
+
+.content .center .main h2 {
+    font-size: 18px;
+    font-family: "微软雅黑";
+    text-align: center;
+    color: #333;
+    margin-top: 70px;
+}
+
+.content .center .main h2:hover {
+    text-decoration: underline;
+}
+
+.content .center .main img {
+    width: 370px;
+    height: 210px;
+    margin: 8px;
+}
+
+.content .center .main div {
+    width: 1200px;
+    height: auto;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    line-height: 30px;
+}
+
+.content .center .main p {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #333;
+    font-weight: 400;
+    text-indent: 2em;
+}

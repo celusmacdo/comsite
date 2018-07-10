@@ -1,0 +1,36 @@
+
+    <div class="banner">
+        <img src="<?php echo $news_banner['banner_info']; ?>" alt="">
+    </div>
+    <div class="content">
+        <div class="top">
+            <div>
+                <span>新闻中心</span>
+                <p>NEWS CENTER</p>
+            </div>
+            <ul>
+                <?php foreach($cat_nav AS $k=>$v):?>
+                <li <?php if($category_id==$v['id']):?>class="on"<?php endif;?>>
+                	<a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=index&category_id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a>
+                </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+        <div class="main">
+            <h2><?php echo $news['title'];?></h2>
+            <img src="<?php echo $news['new_photo'];?>" alt="">
+            <?php echo $news['content'];?>
+        </div>
+        <div class="flip">
+			<?php if(!empty($prev[0]['id'])):?>
+            <a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=details&category_id=<?php echo $prev[0]['category_id'];?>&id=<?php echo $prev[0]['id'];?>">上一篇</a>
+			<?php else:?>
+			<a href="###">没有了</a>
+			<?php endif;?>
+			<?php if(!empty($next[0]['id'])):?>
+            <a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=details&category_id=<?php echo $next[0]['category_id'];?>&id=<?php echo $next[0]['id'];?>">下一篇 </a>
+			<?php else:?>
+			<a href="###">没有了</a>
+			<?php endif;?>
+        </div>
+    </div>
