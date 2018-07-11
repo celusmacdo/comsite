@@ -40,7 +40,7 @@
             <ul>
 				<?php foreach($product AS $v){ ?>
                 <li>
-                    <a href="<?php echo BASE_URL;?>index.php?c=product&a=details&admin=0&id=<?php echo $v['id']; ?>">
+                    <a href="<?php echo BASE_URL;?>index.php?c=product&a=details&admin=0&id=<?php echo $v['id'];?>&category_id=<?php echo $v['category_id'];?>">
                         <img src="<?php echo $v['pro_photo']; ?>" alt="">
                         <div class="hover">
                             <p>
@@ -49,7 +49,7 @@
                         </div>
                     </a>
                     <span>
-                        <a href="<?php echo BASE_URL;?>index.php?c=product&a=details&admin=0&id=<?php echo $v['id']; ?>"><?php echo $v['pro_name']; ?></a>
+                        <a href="<?php echo BASE_URL;?>index.php?c=product&a=details&admin=0&id=<?php echo $v['id'];?>&category_id=<?php echo $v['category_id'];?>"><?php echo $v['pro_name']; ?></a>
                     </span>
                 </li>
 				<?php }; ?>
@@ -64,7 +64,7 @@
                     <h5>NEWS CENTER</h5>
                 </div>
                 <div class="list">
-                    <a href="<?php echo BASE_URL;?>home/news_details.php">
+                    <a href="<?php echo BASE_URL;?>index.php?c=news&a=index">
                         <img src="<?php echo $article['photo']?>" alt="">
                         <div class="date">
                             <p><?php echo date('Y',$news[0]['ftime']); ?></p>
@@ -76,7 +76,7 @@
                     <div class="text">
                         <h3>
                             <span></span>
-                            <a href="<?php echo BASE_URL;?>home/news_details.php"><?php echo $article['title']?></a>
+                            <a href="<?php echo BASE_URL;?>index.php?c=news&a=index"><?php echo $article['title']?></a>
                         </h3>
                         <p><?php echo $article['description']?></p>
                     </div>
@@ -84,7 +84,7 @@
                 <ul>
 					<?php foreach($news AS $v){ ?>
                     <li>
-                        <a href="<?php echo BASE_URL;?>index.php?c=news&a=details&category_id=<?php echo $v['category_id'];?>&id=<?php echo $v['id'];?>">
+                        <a href="<?php echo BASE_URL;?>index.php?c=news&a=details&category_id=<?php echo $v['category_id'];?>&id=<?php echo $v['id'];?>&category_id=<?php echo $v['category_id'];?>">
                             <img src="<?php echo $v['news_photo']; ?>" alt="">
                             <div class="date">
                                 <p><?php echo date('Y',$news[0]['ftime']); ?></p>
@@ -98,7 +98,7 @@
                             </div>
                         </a>
                         <h3>
-                            <a href="<?php echo BASE_URL;?>index.php?c=news&a=details&admin=0&id=<?php echo $v['id']; ?>"><?php echo $v['title']; ?></a>
+                            <a href="<?php echo BASE_URL;?>index.php?c=news&a=details&admin=0&id=<?php echo $v['id']; ?>&category_id=<?php echo $v['category_id'];?>"><?php echo $v['title']; ?></a>
                         </h3>
                         <p><?php echo $v['description']; ?></p>
                     </li>

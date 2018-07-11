@@ -11,11 +11,6 @@ $title='用户';
 $group=db_select('group','*','','','group_name!="超级管理员"');
 // var_dump($group);exit;
 if(empty($_POST)==false){
-	$username=db_find('adminuser','username="'.$_POST['username'].'"');
-	if(!empty($username)){
-		echo '<script>alert("用户名重复");history.back();</script>';
-		exit;
-	}
 	if(!empty($_POST['password'])){
 		$_POST['password']=md5($_POST['password']);
 	}

@@ -1,171 +1,239 @@
+<div class="banner">
+    <img src="<?php echo $contact_banner['banner_info']; ?>" alt="">
+</div>
+<div class="content">
+    <div class="top">
+        <div>
+            <span>联系我们</span>
+            <p>ABOUT US</p>
+        </div>
+        <ul>
+            <?php foreach($cat_nav AS $k=>$v):?>
+            <li <?php if($category_id==$v[ 'id']):?>class="on"
+                <?php endif;?>>
+                <a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=index&category_id=<?php echo $v['id'];?>">
+                    <?php echo $v['category_name'];?>
+                </a>
+            </li>
+            <?php endforeach;?>
+        </ul>
+    </div>
+    <?php if($category_id==17){?>
+    <div class="map">
+        <div style="width:1200px;height:420px;border:#ccc solid 1px;" id="dituContent"></div>
+    </div>
+    <?php }?>
 
-    <div class="banner">
-        <img src="<?php echo $contact_banner['banner_info']; ?>" alt="">
-    </div>
-    <div class="content">
-        <div class="top">
-            <div>
-                <span>联系我们</span>
-                <p>ABOUT US</p>
+    <div class="center">
+        <?php if($category_id==18){?>
+        <ul>
+            <li>
+                <span></span>
+                <p>WELCOME TO YINGTE</p>
+            </li>
+            <?php foreach($setup AS $k=>$v):?>
+            <li>
+                <p>
+                    <?php echo $v['name']?>：
+                    <?php echo $v['value']?>
+                </p>
+            </li>
+            <?php endforeach;?>
+        </ul>
+        <?php }?>
+        <?php if($category_id==19){?>
+        <div class="online">
+            <div class="main">
+                <h2 style="margin-top: 0;">
+                    <?php echo $article['title'];?>
+                </h2>
+                <div style="margin-top: 0;">
+                    <p>
+                        <?php echo $article['content'];?>
+                    </p>
+                </div>
             </div>
-            <ul>
-                <?php foreach($cat_nav AS $k=>$v):?>
-                <li <?php if($category_id==$v['id']):?>class="on"<?php endif;?>>
-                	<a href="<?php echo BASE_URL;?>index.php?c=<?php echo C;?>&a=index&category_id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a>
-                </li>
-                <?php endforeach;?>
-            </ul>
         </div>
-		<?php if($category_id==17){?>
-        <div class="map">
-            <div style="width:1200px;height:420px;border:#ccc solid 1px;" id="dituContent"></div>
+        <?php }?>
+        <?php if($category_id==20){?>
+        <div class="form">
+            <form id="msgForm" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                <p>
+                    <input name="msg_user" id="msg_user" type="text" value="" placeholder="姓名" maxlength="8" />
+                </p>
+                <p>
+                    <input name="msg_phone" id="msg_phone" type="text" value="" placeholder="电话" maxlength="11" />
+                </p>
+                <p>
+                    <input name="msg_email" id="msg_email" type="text" value="" placeholder="邮箱" maxlength="20" />
+                </p>
+                <p>
+                    <textarea name="msg_content" id="msg_content" placeholder="留言"></textarea>
+                </p>
+                <p>
+                    <input id="vcode" name="vcode" type="text" value="" placeholder="验证码" maxlength="4" />
+                </p>
+                <h2>
+                    <a href="###" class="pull-left" id="changevcode">
+                        <img id="showvcode" src="<?php echo BASE_URL?>index.php?c=vcode&a=index&admin=1">
+                    </a>
+                </h2>
+                <input id="submit" name="" class="button" type="button" value="提交" />
+                <input class="button" type="reset" value="重置" />
+                <div class="middle" style="float: right; margin: 10px 100px 0 0;" id="msg"></div>
         </div>
-		<?php }?>
-		
-        <div class="center">
-			<?php if($category_id==18){?>
-            <ul>
-                <li>
-                    <span></span>
-                    <p>WELCOME TO YINGTE</p>
-                </li>
-				<?php foreach($setup AS $k=>$v):?>
-                <li>
-                    <p><?php echo $v['name']?>：<?php echo $v['value']?></p>
-                </li>
-				<?php endforeach;?>
-            </ul>
-			<?php }?>
-			<?php if($category_id==19){?>
-				<div class="online">
-					<div class="main">
-						<h2 style="margin-top: 0;"><?php echo $article['title'];?></h2>
-						<div style="margin-top: 0;">
-							<p><?php echo $article['content'];?></p>
-						</div>
-					</div>
-				</div>
-			<?php }?>
-			<?php if($category_id==20){?>
-            <div class="form">
-                <form id="msgForm" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
-                    <p>
-                        <input name="msg_user" id="msg_user" type="text" value="" placeholder="姓名" maxlength="8" />
-                    </p>
-                    <p>
-                        <input name="msg_mobile" id="msg_mobile" type="text" value="" placeholder="电话" maxlength="11" />
-					</p>
-                    <p>
-                        <input name="msg_email" id="msg_email" type="text" value="" placeholder="邮箱" maxlength="20" />
-                    </p>
-                    <p>
-                        <textarea name="msg_content" id="msg_content" placeholder="留言"></textarea>
-                    </p>
-                    <p>
-                        <input id="vcode" name="vcode" type="text" value="" placeholder="验证码" maxlength="4" />
-                    </p>
-                    <h2>
-                        <a href="###" class="pull-left" id="changevcode"><img id="showvcode" src="<?php echo BASE_URL?>index.php?c=vcode&a=index&admin=1"></a>
-                    </h2>
-                    <input class="button" type="button" value="提交" />
-                    <input class="button" type="reset" value="重置" />
-					<div class="middle" style="float: right; margin: 10px 100px 0 0;" id="msg"></div>
-            </div>
-			<?php }?>
-        </div>
+        <?php }?>
     </div>
-	
-	<script type="text/javascript">
-		//验证码函数
-		$(function(){
-			$('#changevcode').click(function(){
-				$('#showvcode').attr('src','<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1&'+Math.round(Math.random()*1000));
-			});
-		});
-		$('.button').click(function(){
-			if($('#msg_user').val() == ''){
-				alert('请输入姓名');
-				return false;
-			}else if($('#msg_mobile').val() == ''){
-				alert('请输入电话');
-				return false;
-			}else if($('#msg_email').val() == ''){
-				alert('请输入邮箱');
-				return false;
-			}else if($('#msg_content').val() == ''){
-				alert('请输入内容');
-				return false;
-			}else{
-				$.post("index.php?c=contact&a=index", { vcode:$('#vcode').val(),msg_user:$('#msg_user').val(),msg_phone:$('#msg_phone').val(),msg_email:$('#msg_email').val(),msg_content:$('#msg_content').val() },function(data){
-					if(data == 2){
-						alert("请看清楚验证码");
-						$('#showvcode').attr('src','<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1&'+Math.round(Math.random()*1000));
-					}
-				})
-				return false;
+</div>
+
+<script type="text/javascript">
+    //验证码函数
+    $(function () {
+        $('#changevcode').click(function () {
+            $('#showvcode').attr('src', '<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1&' +
+                Math.round(Math.random() * 1000));
+        });
+    });
+    $('.button').click(function () {
+        if ($('#msg_user').val() == '') {
+            alert('请输入姓名');
+            return false;
+        } else if ($('#msg_phone').val() == '') {
+            alert('请输入电话');
+            return false;
+        } else if ($('#msg_email').val() == '') {
+            alert('请输入邮箱');
+            return false;
+        } else if ($('#msg_content').val() == '') {
+            alert('请输入内容');
+            return false;
+        } else {
+            $.post("index.php?c=contact&a=index", {
+                vcode: $('#vcode').val(),
+                msg_user: $('#msg_user').val(),
+                msg_phone: $('#msg_phone').val(),
+                msg_email: $('#msg_email').val(),
+                msg_content: $('#msg_content').val()
+            }, function (data) {
+                if (data == 2) {
+                    alert("请看清楚验证码");
+                    $('#showvcode').attr('src',
+                        '<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1&' + Math.round(
+                            Math.random() * 1000));
+                } else{
+									alert("提交成功");history.go(0);
+								}
+            })
+            return false;
+
+        }
+
+
+    })
+</script>
+<script>
+    $(function () {
+        var error = 0; //定义错误次数
+        //正则表达：判断一段字符串中是否有你想查找的东西   结果：null
+        /*
+        /^$/  从一个字符串的开始到一个字符串的结束
+              /^$/.exec($('#username').val())   判断账号的全部字符
+        [] 范围
+        [a-z]  一个小写
+        [A-Z]  一个大写
+        [0-9]  一个数字
+        [^0-9]  除了数字以外的字符
+        [^a-zA-Z] 除了英文字母以外的字符
+	   
+        {最少几个,最多几个}   最小最大值
+        {0,}  最少一个都没有，最多可以是无限
+        {1,}  最少一个，最多无限
+        {0,1} 最少一个都没有，最多一个
+        {17}  最少17个
+	   
+        (可能1|可能2)
+        */
+        function checkUser() {
+            var rs = '';
+            if ($('#msg_user').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^[\u4e00-\u9fa5]{2,}$/.exec($('#msg_user').val());
+                if (rs == null) {
+                    $('#msg_user').css('color', 'red');
+                    $('#msg').css('color', 'red');
+                    $('#msg').html('注：红色字体为格式错误');
+                    error++;
+                } else {
+                    error--;
+                    $('#msg_user').css('color', 'black');
+                    $('#msg').css('color', 'blue');
+                    $('#msg').html('');
+                }
+            }
+        }
+        //检查电话
+        function checkMobile() {
+            var rs = '';
+            if ($('#msg_phone').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.exec($('#msg_phone')
+                    .val());
+                if (rs == null) {
+                    $('#msg_phone').css('color', 'red');
+                    $('#msg').css('color', 'red');
+                    $('#msg').html('注：红色字体为格式错误');
+                    error++;
+                } else {
+                    error--;
+                    $('#msg_phone').css('color', 'black');
+                    $('#msg').css('color', 'blue');
+                    $('#msg').html('');
+                }
+            }
+        }
+
+        function checkEmail() {
+            var rs = '';
+            if ($('#msg_email').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.exec($('#msg_email').val());
+                if (rs == null) {
+                    $('#msg_email').css('color', 'red');
+                    $('#msg').css('color', 'red');
+                    $('#msg').html('注：红色字体为格式错误');
+                    error++;
+                } else {
+                    error--;
+                    $('#msg_email').css('color', 'black');
+                    $('#msg').css('color', 'blue');
+                    $('#msg').html('');
+                }
+            }
+        }
+        //管理员账号的单行文本输入框失去焦点的时候
 				
-			}
-			
-			
-		})
-		
-	</script>
-	<script>
-	$(function(){
-	   var error=0;//定义错误次数
-	   //正则表达：判断一段字符串中是否有你想查找的东西   结果：null
-	   /*
-	   /^$/  从一个字符串的开始到一个字符串的结束
-	         /^$/.exec($('#username').val())   判断账号的全部字符
-	   [] 范围
-	   [a-z]  一个小写
-	   [A-Z]  一个大写
-	   [0-9]  一个数字
-	   [^0-9]  除了数字以外的字符
-	   [^a-zA-Z] 除了英文字母以外的字符
-	   
-	   {最少几个,最多几个}   最小最大值
-	   {0,}  最少一个都没有，最多可以是无限
-	   {1,}  最少一个，最多无限
-	   {0,1} 最少一个都没有，最多一个
-	   {17}  最少17个
-	   
-	   (可能1|可能2)
-	   */
-	    //检查电话
-	   function checkMobile(){
-	   		var rs='';
-	   		if($('#msg_mobile').val().length>=0){
-	   			//正则表达.exec(字符串)
-	   			rs=/^1(38|35|36|58)[0-9]{8}$/.exec($('#msg_mobile').val());
-	   	if(rs==null){
-	   			$('#msg').css('color','red');
-	   			$('#msg').html('电话格式不正确');
-	   		error++;
-	   	}else{
-	   			error--;
-	   			$('#msg').css('color','blue');
-	   			$('#msg').html('填写电话正确');
-	   	}
-	   	}  
-	   }
-	   //管理员账号的单行文本输入框失去焦点的时候
-		 
-	   $('#msg_mobile').blur(function(){
-					checkMobile();
-	   });
-	    //表单提交的时候
-	   $('#msgForm').submit(function(){
-			checkMobile();
-	     //如果错误大于0,代表有很多错
-		 if(error>0){      
-		   //如果表单提交的时候，要先检查表单的元素，就必须阻止表单提交
-		   return false;
-		 }else{
-		   return true;
-		 }
-	
-	   }); 
-	});
-	
-	</script>
+				$('#msg_user').blur(function () {
+						checkUser();
+				});
+        $('#msg_phone').blur(function () {
+            checkMobile();
+        });
+        $('#msg_email').blur(function () {
+            checkEmail();
+        });
+        //表单提交的时候
+        $('#msgForm').submit(function () {
+						checkUser();
+            checkMobile();
+            checkEmail();
+            //如果错误大于0,代表有很多错
+            if (error > 0) {
+                //如果表单提交的时候，要先检查表单的元素，就必须阻止表单提交
+                return false;
+            } else {
+                return true;
+            }
+
+        });
+    });
+</script>

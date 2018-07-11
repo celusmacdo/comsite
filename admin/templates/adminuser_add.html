@@ -56,8 +56,6 @@
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-3"><font color="red">*</font>昵称:</label>
                 <div class="col-sm-9">
                     <input name="nickname" value="" type="text" id="nickname" placeholder="nickname" class="col-xs-10 col-sm-5" />
-					<span class="help-inline col-xs-12 col-sm-5">
-															<span class="middle" id="nickname_msg">注：昵称不能重复</span>
                 </div>
             </div>
             <div class="form-group">
@@ -80,8 +78,6 @@
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-6">QQ:</label>
                 <div class="col-sm-9">
                     <input name="qq" value="" type="text" id="qq" placeholder="QQ" class="col-xs-10 col-sm-5" />
-					<span class="help-inline col-xs-12 col-sm-5">
-															<span class="middle" id="qq_msg">注：帐号必须唯一,帐号必须使用字母或者字母和数字组成，账号不能以数字开头</span>
                 </div>
             </div>
             <div class="form-group">
@@ -101,8 +97,6 @@
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-6"><font color="red">*</font>头像:</label>
                 <div class="col-sm-9">
 					<input name="admin_portrait" type="file" id="admin_portrait"  class="col-xs-10 col-sm-5" />
-					<span class="help-inline col-xs-12 col-sm-5">
-															<span class="middle" id="portrait_msg">注：帐号必须唯一,帐号必须使用字母或者字母和数字组成，账号不能以数字开头</span>
                 </div>
             </div>
 						<div class="form-group">
@@ -231,9 +225,19 @@ $(function(){
 				error++;
 			}else{
 			    error--;
-				//ajax查询账号是否已经使用
-			    $('#username_msg').css('color','blue');
-			    $('#username_msg').html('填写管理员账号正确');
+					//ajax查询账号是否已经使用
+			    $.get("index.php?c=check&a=adminuser&admin=1", { username: $('#username').val()},
+			    function(data){
+			    		if(data==1){
+			    		$('#username_msg').css('color','red');
+			    				$('#username_msg').html('账号已经被占用，请换一个名字');
+			    	}else{
+			    			error--;
+			    		//ajax查询账号是否已经使用
+			    				$('#username_msg').css('color','blue');
+			    				$('#username_msg').html('填写管理员账号正确');
+			    	}
+			    });
 			}
 	   }  
    }

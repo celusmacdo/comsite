@@ -23,6 +23,7 @@
 			unset($_POST['vcode']);
 			$_POST['msg_time']=time();
 			// var_dump($_POST);exit;
+			// echo '<script>alert("留言成功");history.back()</script>';
 			db_add('msg','0');
 		}else{
 			echo '2';

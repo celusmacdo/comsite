@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-11 01:35:49
+Date: 2018-07-11 18:14:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,7 +33,7 @@ CREATE TABLE `adminuser` (
   `frozen` tinyint(1) unsigned DEFAULT '0' COMMENT '账号冻结：0代表可以使用，1代表不可以使用',
   `group_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of adminuser
@@ -42,6 +42,7 @@ INSERT INTO `adminuser` VALUES ('3', 'red', '21232f297a57a5a743894a0e4a801fc3', 
 INSERT INTO `adminuser` VALUES ('4', 'bule', '21232f297a57a5a743894a0e4a801fc3', '蓝晶晶', '13548038805', '1255388525@qq.com', '1255388525', '0', '1529032118', 'uploads/2018-06-15/tom4ef1b3addf8a8932af05212ce4ee14cb1529032124.png', '0', '3');
 INSERT INTO `adminuser` VALUES ('5', 'green', '21232f297a57a5a743894a0e4a801fc3', '原谅绿', '13548038805', '1255388525@qq.com', '1255388525', '0', '1531240847', 'uploads/2018-06-15/tom460bb6ed9a51684b2946e2d6be05a6fb1529032108.jpg', '0', '3');
 INSERT INTO `adminuser` VALUES ('7', 'admin', '21232f297a57a5a743894a0e4a801fc3', '超级用户', '13548038805', '1366497414@qq.com', '1255388525', '0', '1530589731', 'uploads/2018-06-13/tome6ddbaa40e957c007050197603a7048a1528872086.jpg', '0', '1');
+INSERT INTO `adminuser` VALUES ('13', 'admin01', 'c51cd8e64b0aeb778364765013df9ebe', 'admin01', '13537029904', '15654654654@qq.com', '15654654654', '0', '1531299966', 'uploads/2018-07-11/03d017d11b9018aba8f80cdc35aaad9b.png', '0', '3');
 
 -- ----------------------------
 -- Table structure for `article`
