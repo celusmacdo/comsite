@@ -255,7 +255,7 @@ function db_update($table){
 	//var_dump(mysqli_error($link));exit;
 		
 	if ($query == true){
-		echo '<script>alert("更新成功");history.back();history.go(-2);</script>';
+		echo '<script>alert("更新成功");history.back();history.go(-1);</script>';
 		exit;
 	}else{
 		echo '<script>alert("更新失败");location.href="'.BASE_URL.'/index.php?c='.C.'&a=update&admin=1&id='.$_POST['id'].'";</script>';
