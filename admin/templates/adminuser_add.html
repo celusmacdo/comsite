@@ -35,43 +35,52 @@
     <div class="page-content">
         <form id="adminuser_form" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><font color="red">*</font>用户名:</label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">
+                    <font color="red">*</font>用户名:</label>
                 <div class="col-sm-9">
                     <input name="username" value="" type="text" id="username" placeholder="username" class="col-xs-10 col-sm-5" />
-					<span class="help-inline col-xs-12 col-sm-6">
-										<span class="middle" id="username_msg">注：帐号不能重复,必须使用字母或者字母和数字组成，不能以数字开头
-，长度8-18位</span>
-									</span>
+                    <span class="help-inline col-xs-12 col-sm-6">
+                        <span class="middle" id="username_msg">注：帐号不能重复,必须使用字母或者字母和数字组成，不能以数字开头 ，长度8-18位
+                        </span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-2"><font color="red">*</font>密码:</label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-2">
+                    <font color="red">*</font>密码:</label>
                 <div class="col-sm-9">
                     <input name="password" value="" type="password" id="password" placeholder="password" class="col-xs-10 col-sm-5" />
-					<span class="help-inline col-xs-12 col-sm-5">
-															<span class="middle" id="password_msg">注：密码长度为6到16个字符</span>
+                    <span class="help-inline col-xs-12 col-sm-5">
+                        <span class="middle" id="password_msg">注：密码长度为6到16个字符</span>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-3"><font color="red">*</font>昵称:</label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-3">
+                    <font color="red">*</font>昵称:</label>
                 <div class="col-sm-9">
                     <input name="nickname" value="" type="text" id="nickname" placeholder="nickname" class="col-xs-10 col-sm-5" />
+										<span class="help-inline col-xs-12 col-sm-5">
+												<span class="middle" id="nickname_msg">注：昵称长度3到20个字符，不能重复</span>
+										</span>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-4"><font color="red">*</font>电话:</label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-4">
+                    <font color="red">*</font>电话:</label>
                 <div class="col-sm-9">
                     <input name="mobile" value="" type="text" id="mobile" placeholder="mobile" class="col-xs-10 col-sm-5" />
-					<span class="help-inline col-xs-12 col-sm-5">
-															<span class="middle" id="mobile_msg">注：必须验证手机格式的正确</span>
+                    <span class="help-inline col-xs-12 col-sm-5">
+                        <span class="middle" id="mobile_msg">注：必须验证手机格式的正确</span>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-5"><font color="red">*</font>邮箱:</label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-5">
+                    <font color="red">*</font>邮箱:</label>
                 <div class="col-sm-9">
                     <input name="email" value="" type="email" id="email" placeholder="email" class="col-xs-10 col-sm-5" />
-					<span class="help-inline col-xs-12 col-sm-5">
-															<span class="middle" id="email_msg">注：必须验证邮箱的格式正确</span>
+                    <span class="help-inline col-xs-12 col-sm-5">
+                        <span class="middle" id="email_msg">注：必须验证邮箱的格式正确</span>
                 </div>
             </div>
             <div class="form-group">
@@ -94,23 +103,29 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-6"><font color="red">*</font>头像:</label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-6">
+                    <font color="red">*</font>头像:</label>
                 <div class="col-sm-9">
-					<input name="admin_portrait" type="file" id="admin_portrait"  class="col-xs-10 col-sm-5" />
+                    <input name="admin_portrait" type="file" id="admin_portrait" class="col-xs-10 col-sm-5" />
                 </div>
             </div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label no-padding-right" for="form-field-7"><font color="red">*</font>权限设置:</label>
-							<div class="col-sm-9">
-								<select id="form-field-7" name="group_id">
-									<option>..请选择</option>
-									<?php foreach($group AS $k=>$v):?>
-									<option <?php if($v['group_name']=="普通管理员"):?>selected="selected"<?php endif;?> value="<?php echo $v['id'];?>"><?php echo $v['group_name'];?></option>
-									<?php endforeach?>
-								</select>
-							</div>
-						</div>
-						
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-7">
+                    <font color="red">*</font>权限设置:</label>
+                <div class="col-sm-9">
+                    <select id="form-field-7" name="group_id">
+                        <option>..请选择</option>
+                        <?php foreach($group AS $k=>$v):?>
+                        <option <?php if($v[ 'group_name']=="普通管理员" ):?>selected="selected"
+                            <?php endif;?> value="
+                            <?php echo $v['id'];?>">
+                            <?php echo $v['group_name'];?>
+                        </option>
+                        <?php endforeach?>
+                    </select>
+                </div>
+            </div>
+
             <div class="clearfix form-actions">
                 <div class="col-md-offset-3 col-md-9">
                     <button class="btn btn-info" type="submit" name="">
@@ -192,149 +207,184 @@
 
 <!--[if !IE]> -->
 <script>
-$(function(){
-   var error=0;//定义错误次数
-   //正则表达：判断一段字符串中是否有你想查找的东西   结果：null
-   /*
-   /^$/  从一个字符串的开始到一个字符串的结束
-         /^$/.exec($('#username').val())   判断账号的全部字符
-   [] 范围
-   [a-z]  一个小写
-   [A-Z]  一个大写
-   [0-9]  一个数字
-   [^0-9]  除了数字以外的字符
-   [^a-zA-Z] 除了英文字母以外的字符
+    $(function () {
+        var error = 0; //定义错误次数
+        //正则表达：判断一段字符串中是否有你想查找的东西   结果：null
+        /*
+        /^$/  从一个字符串的开始到一个字符串的结束
+              /^$/.exec($('#username').val())   判断账号的全部字符
+        [] 范围
+        [a-z]  一个小写
+        [A-Z]  一个大写
+        [0-9]  一个数字
+        [^0-9]  除了数字以外的字符
+        [^a-zA-Z] 除了英文字母以外的字符
    
-   {最少几个,最多几个}   最小最大值
-   {0,}  最少一个都没有，最多可以是无限
-   {1,}  最少一个，最多无限
-   {0,1} 最少一个都没有，最多一个
-   {17}  最少17个
+        {最少几个,最多几个}   最小最大值
+        {0,}  最少一个都没有，最多可以是无限
+        {1,}  最少一个，最多无限
+        {0,1} 最少一个都没有，最多一个
+        {17}  最少17个
    
-   (可能1|可能2)
-   */
-   //检查账号
-   function checkUsername(){
-       var rs='';
-       if($('#username').val().length>=0){
-	        //正则表达.exec(字符串)  /^开头[a-zA-Z]开头必须是大小写英文[A-Za-z0-9]{5,}开头后面...$结尾/
-	        rs=/^[a-zA-Z][A-Za-z0-9]{5,}$/.exec($('#username').val());
-			if(rs==null){
-			    $('#username_msg').css('color','red');
-			    $('#username_msg').html('账号名称不正确，必须英文开头，可以英文加数字，长度8-18位');
-				error++;
-			}else{
-			    error--;
-					//ajax查询账号是否已经使用
-			    $.get("index.php?c=check&a=adminuser&admin=1", { username: $('#username').val()},
-			    function(data){
-			    		if(data==1){
-			    		$('#username_msg').css('color','red');
-			    				$('#username_msg').html('账号已经被占用，请换一个名字');
-			    	}else{
-			    			error--;
-			    		//ajax查询账号是否已经使用
-			    				$('#username_msg').css('color','blue');
-			    				$('#username_msg').html('填写管理员账号正确');
-			    	}
-			    });
-			}
-	   }  
-   }
-    //检查密码
-   function checkPassword(){
-       var rs='';
-       if($('#password').val().length>=0){
-	        //正则表达.exec(字符串)
-	        rs=/^[a-zA-Z][A-Za-z0-9]{5,}$/.exec($('#password').val());
-			if(rs==null){
-			    $('#password_msg').css('color','red');
-			    $('#password_msg').html('密码不正确，必须英文开头，最少6位');
-				error++;
-			}else{
-               	error--;
-			    $('#password_msg').css('color','blue');
-			    $('#password_msg').html('填写管理员密码正确');
-			}
-	   } 	   
-   }
-    //检查电话
-   function checkMobile(){
-       var rs='';
-       if($('#mobile').val().length>=0){
-	        //正则表达.exec(字符串)
-	        rs=/^((13[0-9])|147|(15[0-35-9])|180|182|(18[5-9]))[0-9]{8}$/.exec($('#mobile').val());
-			if(rs==null){
-			    $('#mobile_msg').css('color','red');
-			    $('#mobile_msg').html('电话格式不正确');
-				error++;
-			}else{
-			    error--;
-			    $('#mobile_msg').css('color','blue');
-			    $('#mobile_msg').html('填写管理员电话正确');
-			}
-	   }  
-   }
-	 //检查邮箱
-	 function checkEmail(){
-	 		var rs='';
-	 		if($('#email').val().length>=0){
-	 			//正则表达.exec(字符串)
-	 			rs=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.exec($('#email').val());
-			if(rs==null){
-					$('#email_msg').css('color','red');
-					$('#email_msg').html('邮箱格式不正确');
-				error++;
-			}else{
-					error--;
-					$('#email_msg').css('color','blue');
-					$('#email_msg').html('填写管理员邮箱正确');
-			}
-	 	}  
-	 }
-   //检查头像
-   function checkPortrait(){
-        //判断头像是否选择
-        if($('#admin_portrait').val().length<1){
-			    $('#portrait_msg').css('color','red');
-			    $('#portrait_msg').html('请选择头像');
-				error++;		
-		}else{
-				$('#portrait_msg').css('color','blue');
-			    $('#portrait_msg').html('头像选择成功');
-				error--;		
-		}
-   }
-   //管理员账号的单行文本输入框失去焦点的时候
-	 
-   $('#username').blur(function(){
-      checkUsername();
-   });
-   $('#password').blur(function(){
-			checkPassword();
-   });
-   $('#mobile').blur(function(){
-			checkMobile();
-   });
-	 $('#email').blur(function(){
-	 		checkEmail();
-	 });
-    //表单提交的时候
-   $('#adminuser_form').submit(function(){
-    checkUsername();
-		checkPassword();
-		checkMobile();
-		checkEmail();
-		checkPortrait();
-     //如果错误大于0,代表有很多错
-	 if(error>0){      
-	   //如果表单提交的时候，要先检查表单的元素，就必须阻止表单提交
-	   return false;
-	 }else{
-	   return true;
-	 }
+        (可能1|可能2)
+        */
+        //检查账号
+        function checkUsername() {
+            var rs = '';
+            if ($('#username').val().length >= 0) {
+                //正则表达.exec(字符串)  /^开头[a-zA-Z]开头必须是大小写英文[A-Za-z0-9]{5,}开头后面...$结尾/
+                rs = /^[a-zA-Z][A-Za-z0-9]{5,}$/.exec($('#username').val());
+                if (rs == null) {
+                    $('#username_msg').css('color', 'red');
+                    $('#username_msg').html('账号名称不正确，必须英文开头，可以英文加数字，长度8-18位');
+                    error++;
+                } else {
+                    error--;
+                    //ajax查询账号是否已经使用
+                    $.get("index.php?c=check&a=adminuser&admin=1", {
+                            username: $('#username').val()
+                        },
+                        function (data) {
+                            if (data == 1) {
+                                $('#username_msg').css('color', 'red');
+                                $('#username_msg').html('账号已经被占用，请换一个名字');
+                            } else {
+                                error--;
+                                //ajax查询账号是否已经使用
+                                $('#username_msg').css('color', 'blue');
+                                $('#username_msg').html('填写管理员账号正确');
+                            }
+                        });
+                }
+            }
+        }
+        //检查昵称
+        function checkNickname() {
+            var rs = '';
+            if ($('#nickname').val().length >= 0) {
+							
+								rs = /^.{1,10}$/.exec($('#nickname').val());
+                if (rs == null) {
+                    $('#nickname_msg').css('color', 'red');
+                    $('#nickname_msg').html('请填写昵称');
+                    error++;
+                } else {
+                    error--;
+                    //ajax查询账号是否已经使用
+                    $.get("index.php?c=check&a=adminuser&admin=1", {
+                            nickname: $('#nickname').val()
+                        },
+                        function (data) {
+                            if (data == 1) {
+                                $('#nickname_msg').css('color', 'red');
+                                $('#nickname_msg').html('昵称已经被占用，请换一个名字');
+                            } else {
+                                error--;
+                                //ajax查询账号是否已经使用
+                                $('#nickname_msg').css('color', 'blue');
+                                $('#nickname_msg').html('填写昵称正确');
+                            }
+                        });
+                }
+            }
+        }
+        //检查密码
+        function checkPassword() {
+            var rs = '';
+            if ($('#password').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^[a-zA-Z][A-Za-z0-9]{5,}$/.exec($('#password').val());
+                if (rs == null) {
+                    $('#password_msg').css('color', 'red');
+                    $('#password_msg').html('密码不正确，必须英文开头，最少6位');
+                    error++;
+                } else {
+                    error--;
+                    $('#password_msg').css('color', 'blue');
+                    $('#password_msg').html('填写管理员密码正确');
+                }
+            }
+        }
+        //检查电话
+        function checkMobile() {
+            var rs = '';
+            if ($('#mobile').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^((13[0-9])|147|(15[0-35-9])|180|182|(18[5-9]))[0-9]{8}$/.exec($('#mobile').val());
+                if (rs == null) {
+                    $('#mobile_msg').css('color', 'red');
+                    $('#mobile_msg').html('电话格式不正确');
+                    error++;
+                } else {
+                    error--;
+                    $('#mobile_msg').css('color', 'blue');
+                    $('#mobile_msg').html('填写管理员电话正确');
+                }
+            }
+        }
+        //检查邮箱
+        function checkEmail() {
+            var rs = '';
+            if ($('#email').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.exec($('#email').val());
+                if (rs == null) {
+                    $('#email_msg').css('color', 'red');
+                    $('#email_msg').html('邮箱格式不正确');
+                    error++;
+                } else {
+                    error--;
+                    $('#email_msg').css('color', 'blue');
+                    $('#email_msg').html('填写管理员邮箱正确');
+                }
+            }
+        }
+        //检查头像
+        function checkPortrait() {
+            //判断头像是否选择
+            if ($('#admin_portrait').val().length < 1) {
+                $('#portrait_msg').css('color', 'red');
+                $('#portrait_msg').html('请选择头像');
+                error++;
+            } else {
+                $('#portrait_msg').css('color', 'blue');
+                $('#portrait_msg').html('头像选择成功');
+                error--;
+            }
+        }
+        //管理员账号的单行文本输入框失去焦点的时候
 
-   }); 
-});
+        $('#username').blur(function () {
+            checkUsername();
+        });
+        $('#nickname').blur(function () {
+            checkNickname();
+        });
+        $('#password').blur(function () {
+            checkPassword();
+        });
+        $('#mobile').blur(function () {
+            checkMobile();
+        });
+        $('#email').blur(function () {
+            checkEmail();
+        });
+        //表单提交的时候
+        $('#adminuser_form').submit(function () {
+            checkUsername();
+            checkNickname();
+            checkPassword();
+            checkMobile();
+            checkEmail();
+            checkPortrait();
+            //如果错误大于0,代表有很多错
+            if (error > 0) {
+                //如果表单提交的时候，要先检查表单的元素，就必须阻止表单提交
+                return false;
+            } else {
+                return true;
+            }
 
+        });
+    });
 </script>

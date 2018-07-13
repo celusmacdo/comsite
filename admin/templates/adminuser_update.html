@@ -197,3 +197,167 @@
 <!-- basic scripts -->
 
 <!--[if !IE]> -->
+<script>
+    $(function () {
+        var error = 0; //定义错误次数
+        
+        //检查账号
+        function checkUsername() {
+            var rs = '';
+            if ($('#username').val().length >= 0) {
+                //正则表达.exec(字符串)  /^开头[a-zA-Z]开头必须是大小写英文[A-Za-z0-9]{5,}开头后面...$结尾/
+                rs = /^[a-zA-Z][A-Za-z0-9]{5,}$/.exec($('#username').val());
+                if (rs == null) {
+                    $('#username_msg').css('color', 'red');
+                    $('#username_msg').html('账号名称不正确，必须英文开头，可以英文加数字，长度8-18位');
+                    error++;
+                } else {
+                    error--;
+                    //ajax查询账号是否已经使用
+                    $.get("index.php?c=check&a=adminuser&admin=1", {
+                            username: $('#username').val()
+                        },
+                        function (data) {
+                            if (data == 1) {
+                                $('#username_msg').css('color', 'red');
+                                $('#username_msg').html('账号已经被占用，请换一个名字');
+                            } else {
+                                error--;
+                                //ajax查询账号是否已经使用
+                                $('#username_msg').css('color', 'blue');
+                                $('#username_msg').html('填写管理员账号正确');
+                            }
+                        });
+                }
+            }
+        }
+        //检查昵称
+        function checkNickname() {
+            var rs = '';
+            if ($('#nickname').val().length >= 0) {
+							
+								rs = /^.{1,10}$/.exec($('#nickname').val());
+                if (rs == null) {
+                    $('#nickname_msg').css('color', 'red');
+                    $('#nickname_msg').html('请填写昵称');
+                    error++;
+                } else {
+                    error--;
+                    //ajax查询账号是否已经使用
+                    $.get("index.php?c=check&a=adminuser&admin=1", {
+                            nickname: $('#nickname').val()
+                        },
+                        function (data) {
+                            if (data == 1) {
+                                $('#nickname_msg').css('color', 'red');
+                                $('#nickname_msg').html('昵称已经被占用，请换一个名字');
+                            } else {
+                                error--;
+                                //ajax查询账号是否已经使用
+                                $('#nickname_msg').css('color', 'blue');
+                                $('#nickname_msg').html('填写昵称正确');
+                            }
+                        });
+                }
+            }
+        }
+        //检查密码
+        function checkPassword() {
+            var rs = '';
+            if ($('#password').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^[a-zA-Z][A-Za-z0-9]{5,}$/.exec($('#password').val());
+                if (rs == null) {
+                    $('#password_msg').css('color', 'red');
+                    $('#password_msg').html('密码不正确，必须英文开头，最少6位');
+                    error++;
+                } else {
+                    error--;
+                    $('#password_msg').css('color', 'blue');
+                    $('#password_msg').html('填写管理员密码正确');
+                }
+            }
+        }
+        //检查电话
+        function checkMobile() {
+            var rs = '';
+            if ($('#mobile').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^((13[0-9])|147|(15[0-35-9])|180|182|(18[5-9]))[0-9]{8}$/.exec($('#mobile').val());
+                if (rs == null) {
+                    $('#mobile_msg').css('color', 'red');
+                    $('#mobile_msg').html('电话格式不正确');
+                    error++;
+                } else {
+                    error--;
+                    $('#mobile_msg').css('color', 'blue');
+                    $('#mobile_msg').html('填写管理员电话正确');
+                }
+            }
+        }
+        //检查邮箱
+        function checkEmail() {
+            var rs = '';
+            if ($('#email').val().length >= 0) {
+                //正则表达.exec(字符串)
+                rs = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.exec($('#email').val());
+                if (rs == null) {
+                    $('#email_msg').css('color', 'red');
+                    $('#email_msg').html('邮箱格式不正确');
+                    error++;
+                } else {
+                    error--;
+                    $('#email_msg').css('color', 'blue');
+                    $('#email_msg').html('填写管理员邮箱正确');
+                }
+            }
+        }
+        //检查头像
+        function checkPortrait() {
+            //判断头像是否选择
+            if ($('#admin_portrait').val().length < 1) {
+                $('#portrait_msg').css('color', 'red');
+                $('#portrait_msg').html('请选择头像');
+                error++;
+            } else {
+                $('#portrait_msg').css('color', 'blue');
+                $('#portrait_msg').html('头像选择成功');
+                error--;
+            }
+        }
+        //管理员账号的单行文本输入框失去焦点的时候
+
+        $('#username').blur(function () {
+            checkUsername();
+        });
+        $('#nickname').blur(function () {
+            checkNickname();
+        });
+        $('#password').blur(function () {
+            checkPassword();
+        });
+        $('#mobile').blur(function () {
+            checkMobile();
+        });
+        $('#email').blur(function () {
+            checkEmail();
+        });
+        //表单提交的时候
+        $('#adminuser_form').submit(function () {
+            checkUsername();
+            checkNickname();
+            checkPassword();
+            checkMobile();
+            checkEmail();
+            checkPortrait();
+            //如果错误大于0,代表有很多错
+            if (error > 0) {
+                //如果表单提交的时候，要先检查表单的元素，就必须阻止表单提交
+                return false;
+            } else {
+                return true;
+            }
+
+        });
+    });
+</script>
